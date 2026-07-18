@@ -1,0 +1,13 @@
+from starlette.middleware.cors import CORSMiddleware
+
+from app.core.config import settings
+
+
+def setup_cors(app) -> None:
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=settings.CORS_ORIGINS,
+        allow_credentials=True,
+        allow_methods=["GET", "POST", "OPTIONS"],
+        allow_headers=["Content-Type", "X-Request-ID", "X-Api-Key"],
+    )
