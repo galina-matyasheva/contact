@@ -1,7 +1,7 @@
 import { strings } from '../locales/ru';
 import type { ApiError, ContactFormData, ContactResponse } from '../types';
 
-const API_BASE = '/api';
+const API_BASE = 'https://galina-contact-api.onrender.com/api';
 
 export async function request<T>(path: string, options?: RequestInit): Promise<T> {
   const response = await fetch(`${API_BASE}${path}`, {
